@@ -1,0 +1,7 @@
+.nav-menu {
+  margin-left: auto;
+}
+
+.mat-toolbar a:not(:last-child) {
+  margin-right: 16px;
+}

@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <nav class="nav-menu" fxLayout="row" fxLayoutAlign="center center">
+    <div *ngIf="!isSmallScreen">
+      <a mat-button routerLink="/">Home</a>
+      <a mat-button routerLink="/movie-list">Movie List</a>
+      <a mat-button routerLink="/phone-directory">Phone Directory</a>
+    </div>
+    <div *ngIf="isSmallScreen">
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/">Home</button>
+        <button mat-menu-item routerLink="/movie-list">Movie List</button>
+        <button mat-menu-item routerLink="/phone-directory">
+          Phone Directory
+        </button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </nav>
+</mat-toolbar>

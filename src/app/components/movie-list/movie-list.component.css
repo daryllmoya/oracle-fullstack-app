@@ -1,0 +1,20 @@
+.movie-list-container {
+  padding: 20px;
+}
+
+.movie-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+  height: 250px;
+  width: 200px;
+  margin: 1rem;
+}
+
+.no-data-message {
+  color: #555;
+  font-size: 18px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}

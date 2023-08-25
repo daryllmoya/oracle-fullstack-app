@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-form-field style="padding: 1rem">
+    <mat-label>Year</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="2023"
+      [(ngModel)]="yearInput"
+      (change)="onInputChanged()"
+    />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="searchMoviesByYear()">
+    Search<mat-icon>search</mat-icon>
+  </button>
+</div>
+
+<div
+  class="movie-list-container"
+  fxLayout="row wrap"
+  fxLayoutAlign="center start"
+  fxLayoutGap="24px"
+>
+  <ng-container *ngIf="!noResultsFound; else noData">
+    <mat-card *ngFor="let movie of movies" class="movie-card">
+      <mat-card-header>
+        <mat-card-title>{{ movie.Title }}</mat-card-title>
+        <mat-card-subtitle>Year: {{ movie.Year }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p style="margin: 1rem 0">IMDB ID: {{ movie.imdbID }}</p>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  <ng-template #noData>
+    <div class="no-data-message mat-h3">No data found</div>
+  </ng-template>
+</div>
